@@ -20,7 +20,7 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- Select all
-keymap.set("n", "<C-a>", "ggVGy")
+keymap.set("n", "<C-a>", ":%yank<CR>")
 
 -- Save file and quit
 keymap.set("n", "<Leader>w", ":update<Return>", opts)

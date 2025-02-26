@@ -1,0 +1,84 @@
+return {
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            explorer = {
+                enabled = false, -- Deshabilitar el explorer
+            },
+            quickfile = {
+                enabled = false, -- Deshabilitar quickfile
+            },
+            picker = {
+                enabled = true,
+                formatters = {
+                    file = {
+                        filename_first = false,
+                        filename_only = false,
+                        icon_width = 2,
+                    },
+                },
+                layout = {
+                    preset = "telescope", -- Usar el layout de telescope
+                    cycle = false,
+                },
+                layouts = {
+                    telescope = {
+                        reverse = true, -- Barra de búsqueda en la parte inferior
+                        layout = {
+                            box = "horizontal",
+                            backdrop = false,
+                            width = 0.8,
+                            height = 0.9,
+                            border = "none",
+                            {
+                                box = "vertical",
+                                { win = "list",  title = " Results ", title_pos = "center", border = "rounded" },
+                                { win = "input", height = 1,          border = "rounded",   title = "{title} {live} {flags}", title_pos = "center" },
+                            },
+                            {
+                                win = "preview",
+                                title = "{preview:Preview}",
+                                width = 0.50,
+                                border = "rounded",
+                                title_pos = "center",
+                            },
+                        },
+                    },
+                    ivy = {
+                        layout = {
+                            box = "vertical",
+                            backdrop = false,
+                            width = 0,
+                            height = 0.4,
+                            position = "bottom",
+                            border = "top",
+                            title = " {title} {live} {flags}",
+                            title_pos = "left",
+                            { win = "input", height = 1, border = "bottom" },
+                            {
+                                box = "horizontal",
+                                { win = "list",    border = "none" },
+                                { win = "preview", title = "{preview}", width = 0.5, border = "left" },
+                            },
+                        },
+                    },
+                },
+                file_ignore_patterns = {}, -- Eliminar patrones de ignorar archivos
+            },
+        },
+        keys = {
+            -- Snacks Picker
+            { "<leader><Space>", function() require("snacks").picker.files({ no_ignore = true }) end,      desc = "Find Files (Snacks Picker)" },
+            { "<leader>gp",      LazyVim.pick("live_grep"),                                                desc = "Grep (Root Dir)" },
+            { "<leader>pk",      function() require("snacks").picker.keymaps({ layout = "ivy" }) end,      desc = "Search Keymaps (Snacks Picker)" },
+            { "<leader>lg",      function() require("snacks").lazygit() end,                               desc = "Lazygit" },
+            { "<leader>gl",      function() require("snacks").lazygit.log() end,                           desc = "Lazygit Logs" },
+
+            -- Other Utils
+            { "<leader>th",      function() require("snacks").picker.colorschemes({ layout = "ivy" }) end, desc = "Pick Color Schemes" },
+            { "<leader>vh",      function() require("snacks").picker.help() end,                           desc = "Help Pages" },
+        }
+    },
+}
