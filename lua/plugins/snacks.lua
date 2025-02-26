@@ -65,7 +65,6 @@ return {
                         },
                     },
                 },
-                file_ignore_patterns = {}, -- Eliminar patrones de ignorar archivos
             },
         },
         keys = {
