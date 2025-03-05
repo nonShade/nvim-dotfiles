@@ -70,7 +70,7 @@ return {
         keys = {
             -- Snacks Picker
             { "<leader><Space>", function() require("snacks").picker.files({ no_ignore = true }) end,      desc = "Find Files (Snacks Picker)" },
-            { "<leader>gp",      LazyVim.pick("live_grep"),                                                desc = "Grep (Root Dir)" },
+            { "<leader>lgp",     LazyVim.pick("live_grep"),                                                desc = "Grep (Root Dir)" },
             { "<leader>pk",      function() require("snacks").picker.keymaps({ layout = "ivy" }) end,      desc = "Search Keymaps (Snacks Picker)" },
             { "<leader>lg",      function() require("snacks").lazygit() end,                               desc = "Lazygit" },
             { "<leader>gl",      function() require("snacks").lazygit.log() end,                           desc = "Lazygit Logs" },
