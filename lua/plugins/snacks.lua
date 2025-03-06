@@ -4,6 +4,21 @@ return {
         priority = 1000,
         lazy = false,
         opts = {
+            styles = {
+                snacks_image = {
+                    relative = "editor",
+                    col = -1,
+                },
+            },
+            image = {
+                enabled = true,
+                doc = {
+                    inline = vim.g.neovim_mode == "skitty" and true or false,
+                    float = true,
+                    max_width = vim.g.neovim_mode == "skitty" and 20 or 60,
+                    max_height = vim.g.neovim_mode == "skitty" and 10 or 30,
+                }
+            },
             explorer = {
                 enabled = false, -- Deshabilitar el explorer
             },

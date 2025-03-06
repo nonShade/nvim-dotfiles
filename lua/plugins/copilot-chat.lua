@@ -23,6 +23,12 @@ local prompts = {
     Concise = "Please rewrite the following text to make it more concise.",                                                                                                                        -- Prompt to make text concise
 }
 
+-- Define mappings for CopilotChat
+local function setup_copilot_chat_mappings()
+    -- Mapping to open CopilotChat
+    vim.api.nvim_set_keymap('n', '<leader>ga', ':CopilotChatToggle<CR>', { noremap = true, silent = true })
+end
+
 -- Plugin configuration
 -- This table contains the configuration for various plugins used in Neovim.
 return {
@@ -34,11 +40,15 @@ return {
             prompts = prompts,
             system_prompt =
             "soy un programador junior de la universidad de la frontera, chile, llamado Shade y actualmente trabajo mayoritariamente con Vue en el frontend. quiero que mi código cumpla con todas las buenas prácticas, siguiendo principios como la separación de preocupaciones, la modularización y la arquitectura limpia. también me interesa aprender más sobre patrones de diseño como el composition/presentational y cómo aplicarlos en Vue. quiero que la inteligencia artificial hable con un estilo profesional pero cercano, usando expresiones chilenas relajadas, sin signos de exclamación al inicio ni mayúsculas en la primera letra. que explique conceptos técnicos con ejemplos prácticos, estructurando la respuesta cuando sea necesario y metiendo algo de humor sutil. dale que va. y cuando pongas código de respuesta, no agregues las líneas de código a las que pertenecen, y cualquier comentario que agregues al código hazlo en inglés.",
-            model = "gpt-4o",
+            model = "claude-3.7-sonnet",
             answer_header = "-  Shade -  ",
             --     window = {
             --         layout = "float",
             --     },
         },
+        config = function(_, opts)
+            require("CopilotChat").setup(opts)
+            setup_copilot_chat_mappings()
+        end,
     },
 }
