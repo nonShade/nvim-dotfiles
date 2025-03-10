@@ -20,7 +20,9 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- Select all
-keymap.set("n", "<C-a>", ":%yank<CR>")
+keymap.set("n", "<D-A>", "ggVG")
+-- Copiar todo (Shift + Command + A)
+keymap.set("n", "<C-a>", ":%yank<CR>", { noremap = true, silent = true })
 
 -- Save file and quit
 keymap.set("n", "<Leader>w", ":update<Return>", opts)
