@@ -31,6 +31,7 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = "a"
 vim.g.lazyvim_picker = "snacks"
+
 -- clipboard
 vim.opt.clipboard:append("unnamedplus") --use system clipboard as default
 vim.opt.hlsearch = true
