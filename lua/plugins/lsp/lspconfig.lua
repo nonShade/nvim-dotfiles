@@ -2,22 +2,11 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   opts = {
-    -- servers = {
-    --     ts_ls = {},
-    --     gopls = {},
-    --     css_ls = {},
-    --     tailwindcss = {},
-    --     html = {},
-    --     lua_ls = {},
-    --     marksman = {},
-    --     emmet_ls = {},
-    --     emmet_language_server = {}
-    -- },
   },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     local keymap = vim.keymap -- for conciseness
