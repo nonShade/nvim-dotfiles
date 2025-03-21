@@ -20,10 +20,10 @@ return {
         }
       },
       explorer = {
-        enabled = false,         -- Deshabilitar el explorer
+        enabled = false, -- Deshabilitar el explorer
       },
       quickfile = {
-        enabled = false,         -- Deshabilitar quickfile
+        enabled = false, -- Deshabilitar quickfile
       },
       picker = {
         enabled = true,
@@ -35,12 +35,12 @@ return {
           },
         },
         layout = {
-          preset = "telescope",           -- Usar el layout de telescope
+          preset = "ivy", -- Usar el layout de telescope
           cycle = false,
         },
         layouts = {
           telescope = {
-            reverse = true,             -- Barra de búsqueda en la parte inferior
+            reverse = true, -- Barra de búsqueda en la parte inferior
             layout = {
               box = "horizontal",
               backdrop = false,
@@ -84,7 +84,7 @@ return {
     },
     keys = {
       -- Snacks Picker
-      { "<leader><Space>", function() require("snacks").picker.files({ no_ignore = true }) end,      desc = "Find Files (Snacks Picker)" },
+      { "<leader><space>", function() Snacks.picker.smart() end,                                     desc = "Smart Find Files" },
       { "<leader>pk",      function() require("snacks").picker.keymaps({ layout = "ivy" }) end,      desc = "Search Keymaps (Snacks Picker)" },
       { "<leader>lg",      function() require("snacks").lazygit() end,                               desc = "Lazygit" },
       { "<leader>gl",      function() require("snacks").lazygit.log() end,                           desc = "Lazygit Logs" },
