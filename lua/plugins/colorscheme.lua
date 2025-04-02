@@ -1,4 +1,8 @@
 return {
+  -- NOTE : Kanagawa
+  {
+    "rebelot/kanagawa.nvim",
+  },
   -- NOTE : Catppuccin
   {
     "catppuccin/nvim",

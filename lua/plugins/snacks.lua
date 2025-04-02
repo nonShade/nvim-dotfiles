@@ -84,14 +84,13 @@ return {
     },
     keys = {
       -- Snacks Picker
-      { "<leader><space>", function() Snacks.picker.smart() end,                                     desc = "Smart Find Files" },
-      { "<leader>pk",      function() require("snacks").picker.keymaps({ layout = "ivy" }) end,      desc = "Search Keymaps (Snacks Picker)" },
-      { "<leader>lg",      function() require("snacks").lazygit() end,                               desc = "Lazygit" },
-      { "<leader>gl",      function() require("snacks").lazygit.log() end,                           desc = "Lazygit Logs" },
+      { "<leader><space>", function() Snacks.picker.smart() end,                                desc = "Smart Find Files" },
+      { "<leader>pk",      function() require("snacks").picker.keymaps({ layout = "ivy" }) end, desc = "Search Keymaps (Snacks Picker)" },
+      { "<leader>lg",      function() require("snacks").lazygit() end,                          desc = "Lazygit" },
+      { "<leader>gl",      function() require("snacks").lazygit.log() end,                      desc = "Lazygit Logs" },
 
       -- Other Utils
-      { "<leader>th",      function() require("snacks").picker.colorschemes({ layout = "ivy" }) end, desc = "Pick Color Schemes" },
-      { "<leader>vh",      function() require("snacks").picker.help() end,                           desc = "Help Pages" },
+      { "<leader>vh",      function() require("snacks").picker.help() end,                      desc = "Help Pages" },
     }
   },
 }
