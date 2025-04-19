@@ -84,7 +84,8 @@ return {
     },
     keys = {
       -- Snacks Picker
-      { "<leader><space>", function() Snacks.picker.smart() end,                                desc = "Smart Find Files" },
+      { "<leader><space>", function() Snacks.picker.files() end,                                desc = "Find Files" },
+      { "<leader>ff",      function() Snacks.picker.smart() end,                                desc = "Smart Find Files" },
       { "<leader>pk",      function() require("snacks").picker.keymaps({ layout = "ivy" }) end, desc = "Search Keymaps (Snacks Picker)" },
       { "<leader>lg",      function() require("snacks").lazygit() end,                          desc = "Lazygit" },
       { "<leader>gl",      function() require("snacks").lazygit.log() end,                      desc = "Lazygit Logs" },
