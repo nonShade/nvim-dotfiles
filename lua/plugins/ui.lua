@@ -13,22 +13,6 @@ end
 return {
   "nvim-lua/plenary.nvim",
   {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    opts = {
-      -- NOTE: Refer if any issues with tui like lazygit https://github.com/max397574/better-escape.nvim/issues/85
-      default_mappings = false,
-      mappings = {
-        i = {
-          j = {
-            k = "<Esc>",
-            j = "<Esc>",
-          },
-        },
-      },
-    },
-  },
-  {
     "echasnovski/mini.icons",
     opts = {
       file = {
