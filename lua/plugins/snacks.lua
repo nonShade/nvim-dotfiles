@@ -19,14 +19,16 @@ return {
           max_height = vim.g.neovim_mode == "skitty" and 10 or 30,
         }
       },
-      explorer = {
-        enabled = false, -- Deshabilitar el explorer
-      },
       quickfile = {
         enabled = false, -- Deshabilitar quickfile
       },
       picker = {
         enabled = true,
+        sources = {
+          explorer = {
+            enabled = false,
+          },
+        },
         formatters = {
           file = {
             filename_first = false,

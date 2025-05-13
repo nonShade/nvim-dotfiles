@@ -19,15 +19,15 @@ return {
         map("n", "<leader>gs", gs.stage_hunk, "Stage hunk")
         map("n", "<leader>gr", gs.reset_hunk, "Reset hunk")
 
-        map("v", "<leader>gs", function()         -- stage selected hunk
+        map("v", "<leader>gs", function() -- stage selected hunk
           gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, "Stage hunk")
-        map("v", "<leader>gr", function()         -- reset selected hunk
+        map("v", "<leader>gr", function() -- reset selected hunk
           gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, "Reset hunk")
 
-        map("n", "<leader>gS", gs.stage_buffer, "Stage buffer")         -- stage whole buffer
-        map("n", "<leader>gR", gs.reset_buffer, "Reset buffer")         -- unstage whole buffer
+        map("n", "<leader>gS", gs.stage_buffer, "Stage buffer") -- stage whole buffer
+        map("n", "<leader>gR", gs.reset_buffer, "Reset buffer") -- unstage whole buffer
 
         map("n", "<leader>gu", gs.undo_stage_hunk, "Undo stage hunk")
 

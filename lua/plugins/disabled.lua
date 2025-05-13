@@ -6,7 +6,7 @@ return {
   { "nvim-telescope/telescope.nvim",            enabled = false },
   { "nvim-telescope/telescope-fzf-native.nvim", enabled = false },
   { "ngtuonghy/live-server-nvim",               enabled = false },
-  { "CopilotC-Nvim/CopilotChat.nvim",           enabled = true, },
+  { "nvim-lualine/lualine.nvim",                enabled = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
     enabled = true,
@@ -32,5 +32,5 @@ return {
         },
       },
     },
-  }
+  },
 }

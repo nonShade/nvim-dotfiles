@@ -35,7 +35,7 @@ return {
 
     -- Define un comando que guarde todos los archivos sin formatear
     vim.api.nvim_create_user_command("WNoFormat", function()
-      vim.cmd("noautocmd wa")       -- Guarda sin activar eventos automáticos
+      vim.cmd("noautocmd wa") -- Guarda sin activar eventos automáticos
     end, { desc = "Guardar todos los archivos sin activar formateo automático" })
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
