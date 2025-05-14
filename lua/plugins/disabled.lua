@@ -9,7 +9,7 @@ return {
   { "nvim-lualine/lualine.nvim",                enabled = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    enabled = true,
+    enabled = false,
     opts = {
       window = {
         position = "right", -- Posición de la barra lateral (derecha)

@@ -1,5 +1,10 @@
 ---@type vim.lsp.Config
 return {
-  filetypes = { "css", "scss", "less" },
-  root_markers = { ".git", "style.css" }
+  cmd = { 'vscode-css-language-server', '--stdio' },
+  filetypes = { 'css', 'scss', 'less' },
+  settings = {
+    css = { validate = true },
+    scss = { validate = true },
+    less = { validate = true },
+  },
 }

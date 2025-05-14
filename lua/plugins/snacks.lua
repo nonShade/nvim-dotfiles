@@ -37,7 +37,7 @@ return {
           },
         },
         layout = {
-          preset = "ivy", -- Usar el layout de telescope
+          preset = "telescope", -- Usar el layout de telescope
           cycle = false,
         },
         layouts = {

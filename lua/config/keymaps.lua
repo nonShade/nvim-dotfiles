@@ -15,9 +15,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- Neo Tree explorer toggle
-keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo Tree" })
-
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
