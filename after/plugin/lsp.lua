@@ -62,6 +62,7 @@ local servers = {
   "lua_ls",
   "html",
   "cssls",
+  "dartls",
 }
 
 for _, server in ipairs(servers) do
