@@ -1,23 +1,85 @@
 return {
-  'MeanderingProgrammer/render-markdown.nvim',
-  dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-  -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-  -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+  "MeanderingProgrammer/render-markdown.nvim",
+  enabled = true,
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "echasnovski/mini.icons",
+  },
   ---@module 'render-markdown'
-  ---@type render.md.UserConfig
-  opts = {},
+  -- ft = { "markdown", "norg", "rmd", "org" },
+  init = function()
+    -- Define colors
+    local color1_bg = "#ff757f"
+    local color2_bg = "#4fd6be"
+    local color3_bg = "#7dcfff"
+    local color4_bg = "#ff9e64"
+    local color5_bg = "#7aa2f7"
+    local color6_bg = "#c0caf5"
+    local color_fg = "#1F2335"
+    -- -- Heading background
+    vim.cmd(string.format([[highlight Headline1Bg guifg=%s guibg=%s gui=bold]], color_fg, color1_bg))
+    vim.cmd(string.format([[highlight Headline2Bg guifg=%s guibg=%s gui=bold]], color_fg, color2_bg))
+    vim.cmd(string.format([[highlight Headline3Bg guifg=%s guibg=%s gui=bold]], color_fg, color3_bg))
+    vim.cmd(string.format([[highlight Headline4Bg guifg=%s guibg=%s gui=bold]], color_fg, color4_bg))
+    vim.cmd(string.format([[highlight Headline5Bg guifg=%s guibg=%s gui=bold]], color_fg, color5_bg))
+    vim.cmd(string.format([[highlight Headline6Bg guifg=%s guibg=%s gui=bold]], color_fg, color6_bg))
+  end,
 
-  -- Commands
-  -- :RenderMarkdown 	require('render-markdown').enable() 	Enable this plugin
-  -- :RenderMarkdown enable 	require('render-markdown').enable() 	Enable this plugin
-  -- :RenderMarkdown buf_enable 	require('render-markdown').buf_enable() 	Enable this plugin for current buffer
-  -- :RenderMarkdown disable 	require('render-markdown').disable() 	Disable this plugin
-  -- :RenderMarkdown buf_disable 	require('render-markdown').buf_disable() 	Disable this plugin for current buffer
-  -- :RenderMarkdown toggle 	require('render-markdown').toggle() 	Toggle state of this plugin
-  -- :RenderMarkdown buf_toggle 	require('render-markdown').buf_toggle() 	Toggle state of this plugin for current buffer
-  -- :RenderMarkdown log 	require('render-markdown').log() 	Opens the log file for this plugin
-  -- :RenderMarkdown expand 	require('render-markdown').expand() 	Increase anti-conceal margin above and below by 1
-  -- :RenderMarkdown contract 	require('render-markdown').contract() 	Decrease anti-conceal margin above and below by 1
-  -- :RenderMarkdown debug 	require('render-markdown').debug() 	Prints information about marks on current line
-  -- :RenderMarkdown config 	require('render-markdown').config() 	Prints difference between config and default
+  opts = {
+    file_types = { "markdown", "Avante" },
+    ft = { "markdown", "Avante" },
+    heading = {
+      sign = false,
+      icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+      backgrounds = {
+        "Headline1Bg",
+        "Headline2Bg",
+        "Headline3Bg",
+        "Headline4Bg",
+        "Headline5Bg",
+        "Headline6Bg",
+      },
+      foregrounds = {
+        "Headline1Fg",
+        "Headline2Fg",
+        "Headline3Fg",
+        "Headline4Fg",
+        "Headline5Fg",
+        "Headline6Fg",
+      },
+    },
+    code = {
+      sign = false,
+      width = "block",
+      right_pad = 1,
+    },
+    bullet = {
+      -- Turn on / off list bullet rendering
+      enabled = true,
+    },
+    -- checkbox = {
+    --     -- Turn on / off checkbox state rendering
+    --     enabled = true,
+    --     -- Determines how icons fill the available space:
+    --     --  inline:  underlying text is concealed resulting in a left aligned icon
+    --     --  overlay: result is left padded with spaces to hide any additional text
+    --     position = "inline",
+    --     unchecked = {
+    --         -- Replaces '[ ]' of 'task_list_marker_unchecked'
+    --         icon = "   󰄱 ",
+    --         -- Highlight for the unchecked icon
+    --         highlight = "RenderMarkdownUnchecked",
+    --         -- Highlight for item associated with unchecked checkbox
+    --         scope_highlight = nil,
+    --     },
+    --     checked = {
+    --         -- Replaces '[x]' of 'task_list_marker_checked'
+    --         icon = "   󰱒 ",
+    --         -- Highlight for the checked icon
+    --         highlight = "RenderMarkdownChecked",
+    --         -- Highlight for item associated with checked checkbox
+    --         scope_highlight = nil,
+    --     },
+    -- },
+  },
 }

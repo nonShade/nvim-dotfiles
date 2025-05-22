@@ -55,6 +55,23 @@ vim.lsp.config("*", {
   capabilities = require("blink.cmp").get_lsp_capabilities(),
 })
 
+-- Define custom signs for diagnostics
+local signs = {
+  [vim.diagnostic.severity.ERROR] = " ",
+  [vim.diagnostic.severity.WARN]  = " ",
+  [vim.diagnostic.severity.HINT]  = "󰠠 ",
+  [vim.diagnostic.severity.INFO]  = " ",
+}
+
+vim.diagnostic.config({
+  signs = {
+    text = signs,
+  },
+  virtual_text = true,
+  underline = false,
+  update_in_insert = false,
+})
+
 local servers = {
   "ts_ls",
   "volar",

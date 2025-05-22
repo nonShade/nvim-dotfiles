@@ -7,6 +7,7 @@ return {
   { "nvim-telescope/telescope-fzf-native.nvim", enabled = false },
   { "ngtuonghy/live-server-nvim",               enabled = false },
   { "nvim-lualine/lualine.nvim",                enabled = true },
+  { "MagicDuck/grug-far.nvim",                  enabled = false },
   {
     "nvim-neo-tree/neo-tree.nvim",
     enabled = false,

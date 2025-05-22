@@ -13,11 +13,19 @@ return {
       image = {
         enabled = true,
         doc = {
-          inline = vim.g.neovim_mode == "skitty" and true or false,
-          float = true,
-          max_width = vim.g.neovim_mode == "skitty" and 20 or 60,
-          max_height = vim.g.neovim_mode == "skitty" and 10 or 30,
-        }
+          float = false,
+          inline = true,
+          max_width = 50,
+          max_height = 30,
+          wo = {
+            wrap = true,
+          },
+        },
+        convert = {
+          notify = true,
+          command = "magick",
+        },
+        img_dirs = { "img", "images", "assets", "static", "public", "media", "attachments", "~/Library", "~/Downloads" },
       },
       quickfile = {
         enabled = false, -- Deshabilitar quickfile
