@@ -82,6 +82,10 @@ local servers = {
   "dartls",
 }
 
+-- Setup Java LSP with jdtls
+require('java').setup()
+require('lspconfig').jdtls.setup({})
+
 for _, server in ipairs(servers) do
   vim.lsp.enable(server)
 end
